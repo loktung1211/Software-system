@@ -1,4 +1,4 @@
-<img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/0e5f284c-6a98-415d-bca1-635c564962c0" /># Software-system
+# Software-system
 Software Evolution - Part I Assignment
 
 **Task 1: Defect Analysis**
@@ -23,10 +23,12 @@ Keyword-based detection misses silent bug fixes and overcounts trivial changes. 
 
 - Complexity hotspots
 
-<img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/1bb17817-2177-446e-8f18-78eea7a4e5c0" />
+<img width="999" height="590" alt="image" src="https://github.com/user-attachments/assets/4bc92d76-4790-4e6f-b9c3-23bad10f4c6f" />
+
 
 - For the correlation between LOC and CC, the statement "Files with more lines of code tend to have higher cyclomatic complexity' is correct. The correlation coefficient between LOC and CC was strong and positive, confirming the expected relationship. This suggests that larger files often contain more branching logic.
-<img width="999" height="590" alt="image" src="https://github.com/user-attachments/assets/7d14778d-cc61-44bd-b613-9bea5b393c52" />
+<img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/3eb4a1e6-e200-4fd5-923e-dc5a30743d1f" />
+
 
 
 - For the correlation between CC and Defect Count, the statement "Files with higher complexity tend to be more defective" can be rejected. The correlation between cyclomatic complexity and defect count was weak or negligible. Most complex files had zero recorded defects, suggesting that complexity alone doesn’t predict defect frequency in this repository.
