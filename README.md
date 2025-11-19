@@ -1,19 +1,40 @@
-# Software-system
+<img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/0e5f284c-6a98-415d-bca1-635c564962c0" /># Software-system
 Software Evolution - Part I Assignment
 
-Task 1: Defect Analysis
+**Task 1: Defect Analysis**
 - Total Number of defects per month 
 <img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/a9b0946d-4216-4969-8efa-233c4e2d438c" />
 
 The sharp drop in October 2025 likely reflects a stabilization phase after a major release. Commit volume decreased, and fewer defect-related keywords appeared. This may indicate a shift toward maintenance or testing rather than active development.
 
-- Number of defects per month for files : modeling_utils.py and __init__.py
+- Number of defects per month for files: modeling_utils.py and __init__.py
 <img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/37d74ce0-2110-4cb8-b215-44268e9e65a9" />
 
-The most defects were introduced in April 2025, especially in `modeling_utils.py`. This aligns with a surge in commits and possibly a large feature integration. Manual inspection suggests refactoring and trainer updates drove defect density.
+Most defects were introduced in April 2025, especially in `modeling_utils.py`. This aligns with a surge in commits and possibly a large feature integration. Manual inspection suggests refactoring and trainer updates drove defect density.
 
 - Limitations of this method for finding defective hotspots: 
-Keyword-based detection misses silent bug fixes and overcounts trivial changes. It     depends heavily on developer phrasing and ignores issue tracker context. Severity, recurrence, and actual impact aren’t captured by commit messages alone.
+
+Keyword-based detection misses silent bug fixes and overcounts trivial changes. It     depends heavily on the developer's phrasing and ignores the issue tracker context. Severity, recurrence, and actual impact aren’t captured by commit messages alone.
+
+
+**Task 2: Complexity Analysis**
+
+-Complexity metrics of 'Lines of Code (LOC)' and 'Cyclomatic Complexity (CC)' are selected
+
+- Complexity hotspots
+
+<img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/1bb17817-2177-446e-8f18-78eea7a4e5c0" />
+
+- For the correlation between LOC and CC, the statement "Files with more lines of code tend to have higher cyclomatic complexity' is correct. The correlation coefficient between LOC and CC was strong and positive, confirming the expected relationship. This suggests that larger files often contain more branching logic.
+<img width="999" height="590" alt="image" src="https://github.com/user-attachments/assets/7d14778d-cc61-44bd-b613-9bea5b393c52" />
+
+
+- For the correlation between CC and Defect Count, the statement "Files with higher complexity tend to be more defective" can be rejected. The correlation between cyclomatic complexity and defect count was weak or negligible. Most complex files had zero recorded defects, suggesting that complexity alone doesn’t predict defect frequency in this repository.
+<img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/07245351-b6a1-44ff-8486-b39083e997bc" />
+
+**Task 3: Coupling Analysis**
+
+
 
 
 
@@ -35,10 +56,10 @@ Keyword-based detection misses silent bug fixes and overcounts trivial changes. 
 
 AI declaration:
 
-GenAI was used as a development partner, technical assistant, and learning assistant, throughout the preparation of this assignment with the following being some of the sample prompts:
+GenAI was used as a development partner, technical assistant, and learning assistant throughout the preparation of this assignment, with the following being the prompts:
 
-1.⁠ ⁠can you share the code block that plots the top 10 coupled file pairs?
-2.⁠ ⁠can you show me the correlation analysis code?  
-3.⁠ ⁠can you share the code block for test–non‑test coupling analysis, and walk me through how you’d validate the output with me step by step?
-4.⁠ ⁠can you share the function for directory‑based test placement?
-5.⁠ ⁠can you give me the defect extraction code?
+1.⁠ ⁠Can you share the code block that plots the top 10 coupled file pairs?
+2.⁠ ⁠Can you show me the correlation analysis code?  
+3.⁠ ⁠Can you share the code block for test–non‑test coupling analysis, and walk me through how you’d validate the output with me step by step?
+4.⁠ ⁠Can you share the function for directory‑based test placement?
+5.⁠ ⁠Can you give me the defect extraction code?
