@@ -1,4 +1,4 @@
-# Software-system
+# Fundamentals of Software Systems (FSS)
 Software Evolution - Part I Assignment
 
 **Task 1: Defect Analysis**
@@ -19,7 +19,7 @@ Keyword-based detection misses silent bug fixes and overcounts trivial changes. 
 
 **Task 2: Complexity Analysis**
 
--Complexity metrics of 'Lines of Code (LOC)' and 'Cyclomatic Complexity (CC)' are selected
+- Complexity metrics of 'Lines of Code (LOC)' and 'Cyclomatic Complexity (CC)' are selected
 
 - Complexity hotspots
 
@@ -35,6 +35,37 @@ Keyword-based detection misses silent bug fixes and overcounts trivial changes. 
 <img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/07245351-b6a1-44ff-8486-b39083e997bc" />
 
 **Task 3: Coupling Analysis**
+- Top 10 most coupled file pairs
+
+<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/dc762248-680e-4bff-bea6-44a0d290e84a" />
+
+By picking the top 2 pairs from the 10 most coupled file pairs: 
+Pair 1: __init__.py & dummy_pt_objects.py
+These two files are tightly coupled because __init__.py orchestrates imports across the transformers package, while dummy_pt_objects.py provides fallback stubs when PyTorch is unavailable. They often change together during dependency updates or compatibility adjustments.
+
+Pair 2: configuration_auto.py & modeling_auto.py
+This pair reflects the core of the auto-model architecture. configuration_auto.py defines model configurations, while modeling_auto.py builds the corresponding model classes. Their co-evolution is expected, as changes in configuration logic often require updates in model instantiation.
+
+- Top 10 Coupled Test–Non-Test Python File Pairs
+<img width="990" height="590" alt="image" src="https://github.com/user-attachments/assets/d7e63b68-0ca8-4651-93a9-08fff388d6a8" />
+
+Test–non-test coupling reflects a healthy relationship between implementation and validation. Frequent co-commits suggest that developers maintain tests alongside core logic. This is not a code smell but a sign of disciplined development and modular test design.
+
+- Three test placement methods:
+
+1. Commit Co-occurrence Frequency
+Find the test file that has most frequently been committed alongside the target .py file. This reflects real-world developer behavior and logical coupling.
+
+2. Import Reference Matching
+Scan test files to see which ones import the target .py file or its module. This captures direct testing intent and functional dependency.
+
+3. Directory Proximity Heuristic
+Choose the test file in the closest matching subdirectory (e.g., src/transformers/generation/utils.py → tests/generation/test_utils.py). This reflects naming conventions and structural alignment.
+
+- By selecting Commit Co-occurrence Frequency and Directory Proximity Heuristic,
+Commit-based match: tests/generation/test_utils.py
+Path-based match: /content/transformers/conftest.py
+
 
 
 
