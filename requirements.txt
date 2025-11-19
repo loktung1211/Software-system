@@ -1,0 +1,12 @@
+# Pydriller for Git mining and extracting commit information
+pydriller
+
+# Pandas for efficient data handling and time series analysis (e.g., grouping by month)
+pandas
+
+# Matplotlib and Seaborn for creating the required plots/visualizations
+matplotlib
+seaborn
+
+# Radon for calculating complexity metrics (Cyclomatic Complexity, Lines of Code) as suggested in Table 1
+radon

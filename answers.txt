@@ -1,0 +1,46 @@
+Task 1:
+
+ Why did defects drop sharply in October 2025?
+The sharp drop in October 2025 likely reflects a stabilization phase after a major release. Commit volume decreased, and fewer defect-related keywords appeared. This may indicate a shift toward maintenance or testing rather than active development.
+
+When were the most defects introduced, and why?
+The peak occurred in early 2025, especially in `modeling_utils.py`. This aligns with a surge in commits and possibly a large feature integration. Manual inspection suggests refactoring and trainer updates drove defect density.
+
+What are the limitations of this method?
+Keyword-based detection misses silent bug fixes and overcounts trivial changes. It depends heavily on developer phrasing and ignores issue tracker context. Severity, recurrence, and actual impact aren’t captured by commit messages alone.
+
+Task 2:
+
+LOC vs CC correlation Files with more lines of code tend to have higher cyclomatic complexity. The correlation coefficient was strong and positive, confirming the expected relationship. This suggests that larger files often contain more branching logic.
+
+Complexity vs Defect Count The correlation between cyclomatic complexity and defect count was weak or negligible. Most complex files had zero recorded defects, suggesting that complexity alone doesn’t predict defect frequency in this repository.
+
+Task 3:
+
+Picking the top 2 pais from the Top 10 Most Coupled File Pairs chart:
+
+Pair 1: __init__.py & dummy_pt_objects.py
+These two files are tightly coupled because __init__.py orchestrates imports across the transformers package, while dummy_pt_objects.py provides fallback stubs when PyTorch is unavailable. They often change together during dependency updates or compatibility adjustments.
+
+Pair 2: configuration_auto.py & modeling_auto.py
+This pair reflects the core of the auto-model architecture. configuration_auto.py defines model configurations, while modeling_auto.py builds the corresponding model classes. Their co-evolution is expected, as changes in configuration logic often require updates in model instantiation.
+
+-- About the Non-Test Pairs Chart: How would you explain this type of coupling? Is it a code smell that requires attention and signals potential refactoring opportunities or is it something different?
+
+Test–non-test coupling reflects a healthy relationship between implementation and validation. Frequent co-commits suggest that developers maintain tests alongside core logic. This is not a code smell but a sign of disciplined development and modular test design.
+
+Three test placement methods:
+
+1. Commit Co-occurrence Frequency
+Find the test file that has most frequently been committed alongside the target .py file. This reflects real-world developer behavior and logical coupling.
+
+2. Import Reference Matching
+Scan test files to see which ones import the target .py file or its module. This captures direct testing intent and functional dependency.
+
+3. Directory Proximity Heuristic
+Choose the test file in the closest matching subdirectory (e.g., src/transformers/generation/utils.py → tests/generation/test_utils.py). This reflects naming conventions and structural alignment.
+
+Implementing 2 of the 3 methods and finding the best match:
+
+Commit-based match: tests/generation/test_utils.py
+Path-based match: /content/transformers/conftest.py
