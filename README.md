@@ -1,6 +1,27 @@
 # Software-system
 Software Evolution - Part I Assignment
 
+Task 1: Defect Analysis
+- Total Number of defects per month 
+<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/a9b0946d-4216-4969-8efa-233c4e2d438c" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 AI declaration:
 
 GenAI was used as a development partner, technical assistant, and learning assistant, throughout the preparation of this assignment with the following being some of the sample prompts:
