@@ -40,6 +40,7 @@ Keyword-based detection misses silent bug fixes and overcounts trivial changes. 
 <img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/dc762248-680e-4bff-bea6-44a0d290e84a" />
 
 By picking the top 2 pairs from the 10 most coupled file pairs: 
+
 Pair 1: __init__.py & dummy_pt_objects.py
 These two files are tightly coupled because __init__.py orchestrates imports across the transformers package, while dummy_pt_objects.py provides fallback stubs when PyTorch is unavailable. They often change together during dependency updates or compatibility adjustments.
 
@@ -62,32 +63,14 @@ Scan test files to see which ones import the target .py file or its module. This
 3. Directory Proximity Heuristic
 Choose the test file in the closest matching subdirectory (e.g., src/transformers/generation/utils.py → tests/generation/test_utils.py). This reflects naming conventions and structural alignment.
 
-- By selecting Commit Co-occurrence Frequency and Directory Proximity Heuristic,
+- By selecting Commit Co-occurrence Frequency and Directory Proximity Heuristic: 
+
 Commit-based match: tests/generation/test_utils.py
 Path-based match: /content/transformers/conftest.py
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-AI declaration:
+- AI declaration:
 
 GenAI was used as a development partner, technical assistant, and learning assistant throughout the preparation of this assignment, with the following being the prompts:
 
