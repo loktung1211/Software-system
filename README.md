@@ -14,7 +14,7 @@ Most defects were introduced in April 2025, especially in `modeling_utils.py`. T
 
 - Limitations of this method for finding defective hotspots: 
 
-Keyword-based detection misses silent bug fixes and overcounts trivial changes. It     depends heavily on the developer's phrasing and ignores the issue tracker context. Severity, recurrence, and actual impact aren’t captured by commit messages alone.
+Keyword-based detection misses silent bug fixes and overcounts trivial changes. It depends heavily on the developer's phrasing and ignores the issue tracker context. Severity, recurrence, and actual impact aren’t captured by commit messages alone.
 
 
 **Task 2: Complexity Analysis**
@@ -76,7 +76,11 @@ Path-based match: /content/transformers/conftest.py
 GenAI was used as a development partner, technical assistant, and learning assistant throughout the preparation of this assignment, with the following being the prompts:
 
 1.⁠ ⁠Can you share the code block that plots the top 10 coupled file pairs?
+
 2.⁠ ⁠Can you show me the correlation analysis code?  
+
 3.⁠ ⁠Can you share the code block for test–non‑test coupling analysis, and walk me through how you’d validate the output with me step by step?
+
 4.⁠ ⁠Can you share the function for directory‑based test placement?
+
 5.⁠ ⁠Can you give me the defect extraction code?
